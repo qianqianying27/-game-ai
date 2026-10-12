@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game-ai"
+version = "0.1.0"
+description = "Game AI system: deep reinforcement learning agents, self-play and a stable inference service."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "GameAI Lab" }]
+keywords = ["game-ai", "reinforcement-learning", "deep-learning", "pytorch", "self-play"]
+dependencies = [
+    "numpy>=1.23",
+    "torch>=2.0",
+    "tqdm>=4.64",
+    "fastapi>=0.100",
+    "uvicorn[standard]>=0.23",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "httpx>=0.24"]
+plot = ["matplotlib>=3.5"]
+
+[tool.setuptools]
+packages = ["envs", "models", "buffers", "agents", "selfplay", "search", "service", "utils"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

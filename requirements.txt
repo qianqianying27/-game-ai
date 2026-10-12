@@ -1,0 +1,13 @@
+# Core
+numpy>=1.23
+torch>=2.0
+tqdm>=4.64
+# Inference service
+fastapi>=0.100
+uvicorn[standard]>=0.23
+pydantic>=2.0
+# Dev / test
+pytest>=7.0
+httpx>=0.24
+# Optional: PNG 训练曲线(缺失时自动回退 ASCII 折线)
+matplotlib>=3.5
